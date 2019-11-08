@@ -1,7 +1,13 @@
 <h1>All The Guests</h1>
 
+<h4>Search Guest by name:</h4>
+<%= form_tag(guests_path, method: :get) do %>
+  <%= text_field_tag(:search, params[:seach]) %>
+  <%= submit_tag("Submit")%>
+<% end %>
+
 <ul>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <li><%= link_to guest.name, guest %></li>
   <% end %>
 </ul>

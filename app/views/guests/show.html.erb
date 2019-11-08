@@ -1,0 +1,8 @@
+<h2><%= @guest.name %></h2>
+<p>Occupation: <%= @guest.occupation %></p>
+<h4>Appearances: </h4>
+<% @guest.appearances.each do |app| %>
+    <li>Episode #<%= link_to app.episode.number, app.episode %> - <%= link_to 'edit', edit_appearance_path(app.id) %></li>
+<% end %><br>
+
+<%= link_to 'Add Appearance', new_appearance_path %>
