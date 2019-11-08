@@ -23,15 +23,36 @@ Luckily, another developer has already started the job. We have a model for gues
 ## Instructions / Deliverables
 1. To log that a specific guest appeared on a certain episode, we'll need to store some additional data. Make the necessary updates to the schema so that **a guest can appear on many episodes**, as well as **an episode can have multiple guests**.  The appearance should also have a way to **store the guest's rating for that episode in the range of 1 to 5**.
 
+- has_many appearances ##
+- has_many episodes through appearances ##
+- column for rating on appearance table ##
+- validate to make sure user input 1-5 ##
+
 2. As a user, I should be able to fill out a form to **create a new appearance**. I should be able to **choose an existing guest, an existing episode, and add a rating**. Upon successfully creating an appearance, I should be **redirected to the selected episode's show page**.
+
+- appearance#new Appearance.new render form
+- have access to all user on appearance ##
+- have access to all epi ##
+- collection_select to have mix/match existing ##
+- add rating to mix/match
+- appearance#create post response to db
+- redirect_to episode_path for episode
 
 ![Form for relating an episode and a guest](form.gif)
 
 3. On the guests index page, clicking on a guest's name should take us to a **detail view about each guest**. This View should **include the guest's name and occupation**.
 
+- link_to #guest ##
+- render show page w/ name & occu ##
+
+
+
 ![Showing what happens when we click on a click on the Guest Index page](guest_index_to_show.gif)
 
 4. As a user, I should be able to **view all of the guests for a particular episode**. This means that we'll need an episode's show page that lists out all of the guests who were on that episode.
+
+- access to all guest tied to an episode #
+- link_to epi to show all guest for that epi
 
 
 
