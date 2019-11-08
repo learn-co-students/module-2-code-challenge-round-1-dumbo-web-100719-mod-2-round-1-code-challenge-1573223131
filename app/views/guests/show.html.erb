@@ -1,0 +1,9 @@
+<h1>Welcome to the guest page of <%=@guest.name%></h1>
+
+
+<h3><%= @guest.name%> is currently listed as having an occupation of <%= @guest.occupation%>s
+
+<%= form_for :appearance, remote true do |f| %>
+  
+     f.submit
+<% end %>
