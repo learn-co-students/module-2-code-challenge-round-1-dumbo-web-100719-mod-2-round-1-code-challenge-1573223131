@@ -1,0 +1,9 @@
+<h1>THIS EPISODE</h1>
+
+ Episode <%= @episode.number  %> aired on <%= @episode.date  %></li>
+
+<h1>GUESTS ON THIS EPISODE</h1>
+</li><% @episode.guests.each do |guest| %> </li>
+<li> <%= guest.name %></li>
+<% end %>
+
