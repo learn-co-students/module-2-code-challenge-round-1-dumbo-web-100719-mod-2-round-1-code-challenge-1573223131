@@ -1,0 +1,12 @@
+<h1> Guest Form </h1>
+
+<%= form_for @guest do |f| %>
+
+<%= f.label "Name" %>
+<%= f.text_field :name %><br>
+<%= f.label "Occupation" %>
+<%= f.text_field :occupation %>
+<%= f.collection_select(:id,Guest.all,:id,:name) %><br>
+<%= f.collection_select(:id,Episode.all,:id,:date) %><br>
+<%= f.submit "Submit" %>
+<%end %>
