@@ -1,0 +1,8 @@
+<h1>show something</h1>
+<%= form_for @appearance%>
+Guests:
+<%=collection_select(:guest, :guest_id, @guests, :id, :name, prompt: true)%>
+Episodes:
+<%=collection_select(:episode, :episode_id, @episodes, :id, :number, prompt: true)%>
+Rating:
+<%=number_field :rating %>
