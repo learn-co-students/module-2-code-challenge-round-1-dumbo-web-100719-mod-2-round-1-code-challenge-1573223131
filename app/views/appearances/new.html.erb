@@ -1,0 +1,11 @@
+<h1>Make an Appearance!</h1>
+
+<%= form_for @appearance do |f| %>
+
+    Guest: <%= f.text_field :guest %> 
+    <br>
+    Episode: <%= f.text_field :episode %> 
+    <br>
+    <%= f.submit %>
+
+<% end %>
