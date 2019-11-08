@@ -1,3 +1,5 @@
 class Guest < ApplicationRecord
-
-end
+    has_many :appearances
+    has_many :episodes, through: :appearances
+    end
+    
