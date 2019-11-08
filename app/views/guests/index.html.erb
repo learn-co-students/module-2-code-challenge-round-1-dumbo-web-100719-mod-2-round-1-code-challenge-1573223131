@@ -1,7 +1,11 @@
 <h1>All The Guests</h1>
 
+<%= link_to 'Home', home_path %><br><br>
+
+
+<%= link_to 'New Appearance', new_show_path%>
 <ul>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <li><%=link_to guest.name, guest%></li>
   <% end %>
 </ul>

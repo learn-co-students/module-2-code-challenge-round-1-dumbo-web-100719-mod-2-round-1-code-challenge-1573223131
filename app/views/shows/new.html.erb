@@ -1,0 +1,23 @@
+<h1>Create New Appearance </h1>
+
+
+<% if @errors %>
+<% @errors.each do |error|%>
+<li style="color:red"><%=error%></li>
+<% end%>
+<% end%>
+
+
+<%= form_for @show do |f|%>
+
+<label>Guest: </label><br/>
+<%= f.collection_select :guest_id, @guests, :id, :name %><br>
+<label>Episode: </label><br/>
+<%= f.collection_select :episode_id, @episodes, :id, :number %><br>
+<label>Rating: </label><br/>
+<%= f.number_field :rating %><br><br>
+<%= f.submit %>
+<% end %>
+<br><br>
+<%= link_to 'Home', home_path %>
+
