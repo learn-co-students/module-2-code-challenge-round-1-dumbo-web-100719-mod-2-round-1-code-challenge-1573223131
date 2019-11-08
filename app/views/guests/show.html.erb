@@ -1,0 +1,12 @@
+<h1>Guest Detail Page</h1>
+
+<h3>Name: <%= @guest.name %></h3>
+
+<h3>Occupation: <%= @guest.occupation.capitalize %></h3>
+
+Appearances:
+<ul>
+  <% @guest.appearances.each do |appearance| %>
+    <li><%= link_to "Episode: #{appearance.episode.number}", appearance.episode %></li>
+  <% end %>
+</ul>
