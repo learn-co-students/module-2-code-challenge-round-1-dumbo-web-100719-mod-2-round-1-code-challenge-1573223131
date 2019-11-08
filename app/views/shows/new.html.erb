@@ -1,0 +1,11 @@
+<h1>Choose Your Show:</h1>
+
+<%= form_for @show do |f| %>
+<%= f.label 'Show:' %> <br>
+<%= f.collection_select :show_id ,Show.all, :id ,:name %> <br>
+<%= f.label 'Date:' %> <br>
+<%= f.collection_select :episode_id, Episode.all, :id, :date %> <br>
+<%= f.label 'Guest: ' %> <br>
+<%= f.collection_select :guest_id, Guest.all, :id, :name %> <br>
+<%= f.submit %>
+<% end %>

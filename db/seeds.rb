@@ -21,7 +21,9 @@ end
 date = Date.parse('2015-09-08')
 
 (1..40).each do |num|
-  Episode.create(date: date, number: num)
+  e = Episode.create(date: date, number: num)
   date = date.next
 end
 
+show1 = Show.create(name: "bebbe")
+show2 = Show.create(name: "bobby")
