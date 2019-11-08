@@ -1,0 +1,12 @@
+<h1> Guest Details </h1>
+
+<strong>Guest's Name : </strong> <%=@guest.name %><br/>
+<strong>Occupation : </strong> <%=@guest.occupation %>
+
+<p>
+<strong> All Appearances: </strong><br/>
+<% @guest.episodes.each do |episode|%>
+
+<li>Episode: <%=episode.number%>  on <%=episode.date%></li>
+<%end%>
+</p>

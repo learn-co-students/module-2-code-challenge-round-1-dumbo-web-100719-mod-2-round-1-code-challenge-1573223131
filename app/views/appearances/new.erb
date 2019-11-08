@@ -1,0 +1,28 @@
+<h1> Appearance Log Form </h1>
+<% if flash[:errors] %> <p>
+<%= flash[:errors] %>
+
+<marque>!Please try again! </marque>
+</p>
+<% end %>
+
+
+
+<%= form_for(@appearance) do |f| %>
+<%= f.label :guest_name %>
+<%= f.collection_select( :guest_id, Guest.all, :id, :name, prompt: true)%><br/>
+<%= f.label :episode_name %>
+<%= f.collection_select( :episode_id, Episode.all, :id, :number, prompt: true)%><br/>
+<br/>
+<%= f.label :rating %>
+<%= f.number_field :guest_rating  %><br/>
+<%= f.submit %>
+
+        
+<% end %>
+<p>
+
+
+
+</p>
+  

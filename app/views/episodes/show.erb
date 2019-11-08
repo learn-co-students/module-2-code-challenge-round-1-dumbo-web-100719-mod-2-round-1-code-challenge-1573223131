@@ -1,0 +1,11 @@
+<h2> The Late Show w/ Stephen Colbert Episode Facts </h2>
+
+<strong> Episode Number: </strong> <%=@episode.number %>
+<strong> Aired On: </strong> <%=@episode.date %><br/>
+<p>
+<strong> All Guests: </strong><br/>
+<% @episode.guests.each do |guest|%>
+
+<li><%=guest.name%></li>
+<%end%>
+</p>
