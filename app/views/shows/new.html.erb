@@ -1,0 +1,20 @@
+<h1>Create a Show/Appearance</h1>
+
+<% if flash[:errors] %>
+<% flash[:errors].each do |error| %>
+    <font color="red"><%= error %></font>
+    <% end %>
+<%end  %>
+
+<%= form_for @show do |f| %>
+<%= f.label "Select your Guest:" %>
+<ul><%= f.collection_select(:guest_id, Guest.all, :id, :name) %></ul>
+
+<%= f.label "Select Episode Number:"  %>
+<ul><%= f.collection_select(:episode_id, Episode.all, :id, :number) %></ul>
+
+<%= f.label "Please Enter a Rating from 1-5" %>
+<ul><%= f.number_field :rating %></ul>
+
+<%= f.submit %>
+<% end %>

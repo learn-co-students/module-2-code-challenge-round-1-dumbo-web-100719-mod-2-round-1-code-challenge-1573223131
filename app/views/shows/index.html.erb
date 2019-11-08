@@ -1,0 +1,9 @@
+<h1>All SHOWS</h1>
+Show Number:<% @shows.each do |show| %>
+<li><%= link_to show.id, show %></li>
+<% end  %>
+
+<h2>Want to make a Show???
+Submit a form and call us today!!!</h2>
+
+<%= link_to 'Click here to Create a Show!! Dont Delay!', new_show_path %>

@@ -1,0 +1,7 @@
+<h1><font color="blue">Episode: <%= @episode.number %> <=====> <%=@episode.date%></font></h1>
+
+Guest Star Appearances by:
+
+<% @episode.guests.each do |guest| %>
+<ul><%= guest.name %> |++++++++++++| Occupation: <%= guest.occupation %></ul>
+<% end %>
