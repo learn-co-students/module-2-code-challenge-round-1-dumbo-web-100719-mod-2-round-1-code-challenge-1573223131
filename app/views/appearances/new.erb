@@ -1,0 +1,13 @@
+<h1> Create a new appearance </h1>
+
+<p>
+<%= form_for @appearance do |f| %>
+  <%= f.label :guest_name %>:
+ <%= collection_select(@appearance, :guest_id, Guest.all, :id, :name) %>
+<%= f.label :episode_number %>:
+ <%= collection_select(@appearance, :episode_id, Episode.all, :id, :number) %>
+  <%=f.label :rating %>:
+<%= f.number_field :rating %><br />
+ <%= f.submit %>
+<% end %>
+</p>

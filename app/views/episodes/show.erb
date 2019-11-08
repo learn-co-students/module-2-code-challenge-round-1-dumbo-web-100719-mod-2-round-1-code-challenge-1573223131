@@ -1,0 +1,10 @@
+<h1> THis is <%= @episode.number %> of The Late Show </h1>
+
+<p>
+The guests on the episode were:
+<% @episode.each do |episode|%>
+<ol>
+<%= episode.guest_id.name %>
+</ol>
+<%end%>
+
