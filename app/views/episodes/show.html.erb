@@ -1,0 +1,10 @@
+<h1>Wow, Episode <%= @episode.number %> was an Amazing Episode!</h1>
+
+<h3>Date: <%= @episode.date %></h3>
+
+Guests:
+<ul>
+  <% @episode.appearances.each do |appearance| %>
+    <li><%= link_to appearance.guest.name, appearance.guest %></li>
+  <% end %>
+</ul>
