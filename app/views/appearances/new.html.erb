@@ -1,0 +1,15 @@
+<h1>Appearances Can Be Deceiving</h1>
+<%if @errors%>
+<%@errors.each do |error|%>
+<ul>
+<li><%=error%></li>
+<%end%>
+</ul>
+<%end%>
+
+<%=form_for @appearance do |f|%>
+<p><label>Choose a Guest: </label><%=f.collection_select :guest_id, Guest.all, :id, :name, prompt: true %></p>
+<p><label>Choose an Episode: </label><%=f.collection_select :episode_id, Episode.all, :id, :number, prompt: true%></p>
+<p><label>Rating: </label><%=f.number_field :rating%><p>
+<p><%=f.submit%></p>
+<%end%>

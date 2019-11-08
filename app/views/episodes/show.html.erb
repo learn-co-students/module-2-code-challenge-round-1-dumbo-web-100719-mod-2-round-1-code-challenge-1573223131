@@ -1,0 +1,10 @@
+
+<p><label>Episode Number: </label><%=@episode.number%></p>
+<p><label>Episode Date: </label><%=@episode.date%>
+<p><label>Guests: </label> 
+<ul>
+<%@episode.guests.each do |guest|%>
+<li>guest.name</li>
+<%end%>
+</ul>
+
