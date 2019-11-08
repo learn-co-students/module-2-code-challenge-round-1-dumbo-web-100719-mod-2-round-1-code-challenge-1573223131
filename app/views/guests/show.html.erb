@@ -1,0 +1,19 @@
+<h1><%= @guest.name %>'s Page</h1>
+
+
+<label>Occupation: </label>
+<%= @guest.occupation%><br>
+<br>
+
+<h2> Episodes Appearance</h2>
+
+<% @episodes.each do |episode|%>
+<li> <%= link_to "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}", episode %>   </li>
+<%end%>
+
+<br><br>
+<%= link_to 'All Guests', guests_path %><br><br>
+
+
+
+
