@@ -1,0 +1,4 @@
+<h1>Episode #<%= @episode.number %> - Date: <%= @episode.date %></h1>
+<% @episode.guests.each do |guest| %>
+    <p>Guest: <%=link_to guest.name, guest %> - Occupation: <%= guest.occupation %> - rating: <%= (guest.appearances.map {|app| app.rating })[0] %></p>
+<% end %>
