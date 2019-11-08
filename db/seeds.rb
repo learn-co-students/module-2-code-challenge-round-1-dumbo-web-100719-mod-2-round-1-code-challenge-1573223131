@@ -7,21 +7,43 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Guest.destroy_all
+Episode.destroy_all
 
-require 'csv'
+# require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'daily_show_guests.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csv.first(100).each do |row|
-  g = Guest.find_or_initialize_by(name: row['Raw_Guest_List'].split(',').first )
-  g.occupation = row['GoogleKnowlege_Occupation']
-  g.save
-end
+# csv_text = File.read(Rails.root.join('lib', 'seeds', 'daily_show_guests.csv'))
+# csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+# csv.first(100).each do |row|
+#   g = Guest.find_or_initialize_by(name: row['Raw_Guest_List'].split(',').first )
+#   g.occupation = row['GoogleKnowlege_Occupation']
+#   g.save
+# end
 
 date = Date.parse('2015-09-08')
 
-(1..40).each do |num|
-  Episode.create(date: date, number: num)
-  date = date.next
-end
+# (1..40).each do |num|
+#   Episode.create(date: date, number: num)
+#   date = date.next
+# end
+
+
+@how_i_met_your_mother = Episode.create(date: date, number: 1)
+@elite = Episode.create(date: date, number: 8)
+@greys_anatomy = Episode.create(date: date, number: 13)
+
+@muna = Guest.create(name: "Muna", occupation: "surgeon")
+@gene = Guest.create(name: "Gene", occupation: "historian")
+@hope = Guest.create(name: "Hope", occupation: "writer")
+
+Appearance.create(guest: @muna, episode: @how_i_met_your_mother, rating: 4)
+Appearance.create(guest: @muna, episode: @elite, rating: 5)
+Appearance.create(guest: @muna, episode: @greys_anatomy, rating: 3)
+Appearance.create(guest: @gene, episode: @how_i_met_your_mother, rating: 2)
+Appearance.create(guest: @gene, episode: @elite, rating: 1)
+Appearance.create(guest: @gene, episode: @greys_anatomy, rating: 4)
+Appearance.create(guest: @hope, episode: @how_i_met_your_mother, rating: 1)
+Appearance.create(guest: @hope, episode: @elite, rating: 2)
+Appearance.create(guest: @hope, episode: @greys_anatomy, rating: 5)
+
+
 
